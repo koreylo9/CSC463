@@ -1,5 +1,4 @@
 <h3>Travel Request Form</h3>
-<button type="button" class="btn btn-primary">Primary</button>
 <form>
   <div class="form-group">
     <label for="originationAirport">Original Airport: </label>
@@ -8,7 +7,22 @@
   </div>
   <div class="form-group">
     <label for="destinationAirport">Destination Airport: </label>
-    <input type="text" class="form-control" id="destinationAirport" aria-describedby="originAir" placeholder="Enter Destination Airport">
+    <input type="text" class="form-control" id="destinationAirport" aria-describedby="destinAir" placeholder="Enter Destination Airport">
     <small id="destinAir" class="form-text text-muted"></small>
   </div>
+  <div class="form-group">
+    <label for="travelDate">Travel Date </label>
+    <input type="date" class="form-control" id="travelDate" aria-describedby="travel-date">
+    <small id="travel-date" class="form-text text-muted"></small>
+  </div>
+  <div class="form-group">
+    <label for="passengers">Passengers </label>
+    <input [(ngModel)]="passengers"  name="passengers" type="number" class="form-control" id="passengers" aria-describedby="numPassengers">
+    <small id="numPassengers" class="form-text text-muted"></small>
+  </div>
+  <button (click)="calculatePrice()"
+                class="btn btn-light text-info" id="price" name="price">
+                Get Price
+            </button>
+  <h1>Cost of Flight: ${{price}}</h1>
 </form>
